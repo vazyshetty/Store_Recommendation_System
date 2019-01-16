@@ -9,10 +9,9 @@ rsdata$tdate = as.Date(rsdata$Order.Create.Date,format = "%Y-%m-%d")
 str(rsdata$tdate)
 
 #data has been transformed into one order (or) in one row (basket format) for moving further for analysis
-temp <- rec_data_unique %>% group_by(Customer.Number,tdate) %>% summarise(items= paste(Item.Desc.Part.Desc,collapse =";"))
-names(temp)
-trans_data <- cSplit(temp, c("items"), sep=";")
-str(trans_data)
+#
+#
+#
 
 #Apriori algorithm uses input data in transaction format. So ,convert the data into transactional format using following code. 
 convert_transdata <- as(transdata, "transactions")
